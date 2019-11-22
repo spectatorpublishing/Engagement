@@ -1,5 +1,12 @@
 .display-container{
 	display: flex;
+	text-align: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
+}
+
+.section-description{
+	margin: 0rem 0 .2rem 0;
+	font-size: 1rem;
+	width: 100%;
 }

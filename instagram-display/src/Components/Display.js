@@ -1,7 +1,14 @@
 import Thumbnail from "./Thumbnail";
+import Header from "./Header";
 import React from "react";
 
 import "./Display.css"
+
+let createThumbnail = (article, i) => {
+	return(
+		<Thumbnail key={i} imageurl={article.imageurl} link={article.link}/>
+	);
+};
 
 export default class Display extends React.Component{
 	constructor(props){
@@ -9,15 +16,12 @@ export default class Display extends React.Component{
 	}
 
 	render() {
-		var articles = this.props.articles.map(function(article, i) {
-			return(
-				<Thumbnail key={i} imageurl={article.imageurl} link={article.link}/>
-			);
-		});
-
+		var generalArticles = this.props.articles.map(createThumbnail);
 		return (
 			<div className="display-container">
-				{articles}
+				<Header/>
+				<p className="section-description" >Trending</p>
+				{generalArticles}
 			</div>
 		);
 	};
