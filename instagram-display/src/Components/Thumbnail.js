@@ -10,7 +10,9 @@ export default class Thumbnail extends React.Component {
 	render() {
 		return (
 			<div className="thumbnail-container">
-				<img src={this.props.imageurl}/>
+				<a href={this.props.link}>
+					<img src={this.props.imageurl}/>
+				</a>
 			</div>
 		);
 	}
