@@ -9,7 +9,6 @@ var articlejson = [
 {"link": "https://www.columbiaspectator.com/sports/2019/10/14/camacho-ferral-claims-first-place-as-columbia-women-test-younger-runners-at-metropolitan-xc-championships/", "imageurl":"https://arc-anglerfish-arc2-prod-spectator.s3.amazonaws.com/public/VZQE577BRJA2NEEZSDD2WBEOMM.jpg"},
 {"link": "https://www.columbiaspectator.com/arts-and-entertainment/2019/10/10/more-than-a-market-columbias-greenmarket-sellers-discuss-the-cultural-impact-of-farmers-markets/", "imageurl": "https://arc-anglerfish-arc2-prod-spectator.s3.amazonaws.com/public/Y5ZQFHXBEFG5NACRMFZF2MYZEE.jpg"},
 {"link": "https://www.columbiaspectator.com/news/2019/10/09/former-assistant-provost-at-the-new-school-appointed-associate-dean-of-core-curriculum/", "imageurl": "https://arc-anglerfish-arc2-prod-spectator.s3.amazonaws.com/public/QTZKPHJUPZH2XLGIW53OK54WTE.jpg"},
-{"link": "https://www.columbiaspectator.com/news/2019/10/09/former-assistant-provost-at-the-new-school-appointed-associate-dean-of-core-curriculum/", "imageurl": "https://arc-anglerfish-arc2-prod-spectator.s3.amazonaws.com/public/QTZKPHJUPZH2XLGIW53OK54WTE.jpg"},
 {"link": "https//www.columbiaspectator.com/news/2019/10/03/qa-inaugural-vp-of-student-affairs-joseph-greenwell-shares-personal-history-talks-most-pressing-campus-issues/", "imageurl": "https://arc-anglerfish-arc2-prod-spectator.s3.amazonaws.com/public/KXJHQTUCTNCRZPI33JCVGOFIRA.jpg"}
 ];
 
