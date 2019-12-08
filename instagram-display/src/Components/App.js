@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Display from "./Display";
 import './App.css';
 import Tabletop from 'tabletop';
-const config = require('../config');
+import styled from 'styled-components';
+
 
 
 // const sheet_id = '1hUaNrgCxDC5N1hQ528fp-yuxSBCztLU4X6ZR6a1HEbk';
@@ -24,7 +25,17 @@ var articlejson = [
 
 var mykey = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSwLERMtTIHzDSF29sZqDsIjkVwOTyIJKMaU-OQsUOOOEX4OSfgPm4tSHhHIvqAxwvBBK_Bdrr-6Dru/pubhtml';
 
+const KEY_1 = '1iQjvIWgwD4OWgXZ1X3OdDBtJHpr-ku6ajFp8LrxQWkA';
+const KEY_2 = '1hUaNrgCxDC5N1hQ528fp-yuxSBCztLU4X6ZR6a1HEbk';
+
 var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+const ArticlesWrapper = styled.div`
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+`
 
 class App extends Component {
     constructor() {
@@ -39,7 +50,7 @@ class App extends Component {
 
       // window.gapi.load("client", this.initClient);
       Tabletop.init({
-        key: '1hUaNrgCxDC5N1hQ528fp-yuxSBCztLU4X6ZR6a1HEbk',
+        key: KEY_1,
         callback: googleData => {
           console.log('google sheet data --->', googleData)
           this.setState({
@@ -56,7 +67,9 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Display articles = {this.state && this.state.data}/>
+        <ArticlesWrapper>
+          <Display articles = {this.state && this.state.data}/>
+        </ArticlesWrapper>
         
       </div>
     );
