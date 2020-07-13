@@ -1,0 +1,14 @@
+.display-container{
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
+
+.section-description{
+	margin: 0rem 0 .1rem 0;
+	font-size: 1rem;
+	width: 100%;
+}
