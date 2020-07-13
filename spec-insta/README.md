@@ -1,68 +1,62 @@
+# Spec Insta 
+
+This app displays articles for the bio link on Spectator's Instagram account. The articles and respective images are stored in a Google Sheet accessed by an API call using the Tabletop package. 
+
+To change an article, simply copy the FULL URL and put it into the `link` field. To add the article's image, right click the headline image in the article and open it in a new tab. Copy the FULL URL for the image (should be an aws public folder) into the `imageurl` field to the right of the article URL. 
+
+To add more articles, simply repeat the process to add one article but in the next available cells below.
+
+Note: There is a date field that is not used at the time of this writing. However, it might be useful to update the UI in the future, so I recommend keeping it up-to-date.
+
+## Connecting A Google Sheet
+
+[Tabletop.js](https://www.npmjs.com/package/tabletop) is a node package that provides a simple API to connect a Google Sheet to a React app.
+
+In the event that the current Google Sheet becomes unusable, just follow the steps to add a new one to the project and the app should be back online.
+
+This [medium post](https://medium.com/@ryan.mcnierney/using-react-google-sheets-as-your-cms-294c02561d59) has the tutorial I followed to set it up, but I will repeat the steps here.
+
+### Step 1
+
+In the Google Sheet, open the "File" menu and click "Publish to web".
+
+Towards the bottom select Start publishing. *The default setting will export the entire document. You can select a specific tab to export if needed. Tabletop will also by default only grab your first tab if you have multiple. The Tabletop docs have info on grabbing specific tabs.
+
+See image: https://miro.medium.com/max/1400/1*BiXZFRl1HpHPtkrN2N2kfQ.png
+
+### Step 2
+
+Save your spreadsheet key. From the URL, your spreadsheet key will be located here: /spreadsheets/d/**KEY**/edit#gid=0
+
+### Step 3
+
+Update the React app with the key. Tabletop takes the key as a parameter and returns the sheets data in a callback function. App.js `state` is updated inside the callback to supply it with the sheet data. If the first two steps were properly followed, then just adding the key should automatically update this app with the right Google Sheet.
+
+```javascript
+const KEY_1 = '1iQjvIWgwD4OWgXZ1X3OdDBtJHpr-ku6ajFp8LrxQWkA';
+
+componentDidMount() {
+    // Load the Google Sheets Data
+    Tabletop.init({
+      key: KEY_1,
+      callback: googleData => {
+        console.log('google sheet data --->', googleData)
+        this.setState({
+          data: googleData
+        })
+      },
+      simpleSheet: true
+    })
+}
+```
+
+## Deployment
+
+This app is deployed with Github Pages. The `gh-pages` package is one of the constituent modules and there are scripts in `package.json` that enable deployment. 
+
+When an update is ready, merge or push to the master branch. Then, run `npm run deploy`. This will run the appropriate scripts and deploy the site to https://spectatorpublishing.github.io/Engagement/. This url is supplied as the homepage in `package.json`. If there's a mismatch, the page will not load.
+
+## Misc.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

@@ -15,10 +15,7 @@ const example_articlejson = [
 {"link": "https//www.columbiaspectator.com/news/2019/10/03/qa-inaugural-vp-of-student-affairs-joseph-greenwell-shares-personal-history-talks-most-pressing-campus-issues/", "imageurl": "https://arc-anglerfish-arc2-prod-spectator.s3.amazonaws.com/public/KXJHQTUCTNCRZPI33JCVGOFIRA.jpg"}
 ];
 
-
 const KEY_1 = '1iQjvIWgwD4OWgXZ1X3OdDBtJHpr-ku6ajFp8LrxQWkA';
-
-const KEY_2 = '1hUaNrgCxDC5N1hQ528fp-yuxSBCztLU4X6ZR6a1HEbk';
 
 const ArticlesWrapper = styled.div`
   margin-left: 1vw;
