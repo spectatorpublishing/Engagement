@@ -17,6 +17,7 @@ const example_articlejson = [
 
 const KEY_1 = '1iQjvIWgwD4OWgXZ1X3OdDBtJHpr-ku6ajFp8LrxQWkA';
 
+
 const ArticlesWrapper = styled.div`
   margin-left: 1vw;
   margin-right: 1vw;
